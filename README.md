@@ -1,2 +1,2 @@
-# TooolKiit
+# ToolKiit
 Miscellaneous useful tools
