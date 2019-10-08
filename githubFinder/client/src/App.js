@@ -17,15 +17,6 @@ class App extends Component {
     // const clientSecret = process.env.REACT_APP_GITHUB_CLIENT_SECRET;
     this.setState({ loading: true });
     // const res = await axios.get(`https://api.github.com/users?client_id=${clientId}&client_secret=${clientSecret}`);
-    const res = await axios.get(`https://api.github.com/search/users?q=${text}`);
-    this.setState({
-      users: res.data.items,
-      loading: false
-    });
-  }
-
-  searchUsers = async text => {
-    this.setState({ loading: true });
     const res = await axios.get('https://api.github.com/users');
     this.setState({
       users: res.data,
@@ -33,6 +24,15 @@ class App extends Component {
     });
   }
 
+  searchUsers = async text => {
+    this.setState({ loading: true });
+    const res = await axios.get(`https://api.github.com/search/users?q=${text}`);
+    this.setState({
+      users: res.data.items,
+      loading: false
+    });
+  }
+  
   render() {
     return (
       <div className='App'>
