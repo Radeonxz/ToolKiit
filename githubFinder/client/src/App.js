@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Fragment, Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import axios from 'axios';
 import Navbar from './components/layout/Navbar';
@@ -12,7 +12,7 @@ class App extends Component {
     users: [],
     loading: false,
     alert: null
-  }
+  };
 
   async componentDidMount() {
     // env variables
@@ -29,7 +29,9 @@ class App extends Component {
 
   searchUsers = async text => {
     this.setState({ loading: true });
-    const res = await axios.get(`https://api.github.com/search/users?q=${text}`);
+    const res = await axios.get(
+      `https://api.github.com/search/users?q=${text}`
+    );
     this.setState({
       users: res.data.items,
       loading: false
@@ -38,32 +40,42 @@ class App extends Component {
 
   // Clear Users
   clearUsers = () => this.setState({ users: [], loading: false });
-  
+
   // Set Alert
   setAlert = (msg, alertType) => {
     this.setState({ alert: { msg, alertType } });
-    setTimeout(() => this.setState({ alert: null }), 2500)
-  }
+    setTimeout(() => this.setState({ alert: null }), 2500);
+  };
 
   render() {
     const { alert, users, loading } = this.state;
 
     return (
-      <Route>
-        <div className='App'>
+      <Router>
+        <div className="App">
           <Navbar />
-          <div className='container'>
+          <div className="container">
             <Alert alert={alert} />
-            <Search
-              searchUsers={this.searchUsers}
-              clearUsers={this.clearUsers}
-              showClear={users.length > 0 ? true : false}
-              setAlert={this.setAlert}
-            />
-            <Users loading={loading} users={users} />
+            <Switch>
+              <Route
+                exact
+                path="/"
+                render={props => (
+                  <Fragment>
+                    <Search
+                      searchUsers={this.searchUsers}
+                      clearUsers={this.clearUsers}
+                      showClear={users.length > 0 ? true : false}
+                      setAlert={this.setAlert}
+                    />
+                    <Users loading={loading} users={users} />
+                  </Fragment>
+                )}
+              />
+            </Switch>
           </div>
         </div>
-      </Route>
+      </Router>
     );
   }
 }
