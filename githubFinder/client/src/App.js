@@ -1,16 +1,17 @@
-import React, { Fragment, Component } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import axios from 'axios';
-import Navbar from './components/layout/Navbar';
-import Alert from './components/layout/Alert/Alert';
-import About from './components/pages/About';
-import Users from './components/users/Users';
-import Search from './components/users/Search';
-import './App.css';
+import React, { Fragment, Component } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import axios from "axios";
+import Navbar from "./components/layout/Navbar";
+import Alert from "./components/layout/Alert/Alert";
+import About from "./components/pages/About";
+import Users from "./components/users/Users";
+import Search from "./components/users/Search";
+import "./App.css";
 
 class App extends Component {
   state = {
     users: [],
+    user: {},
     loading: false,
     alert: null
   };
@@ -21,13 +22,14 @@ class App extends Component {
     // const clientSecret = process.env.REACT_APP_GITHUB_CLIENT_SECRET;
     this.setState({ loading: true });
     // const res = await axios.get(`https://api.github.com/users?client_id=${clientId}&client_secret=${clientSecret}`);
-    const res = await axios.get('https://api.github.com/users');
+    const res = await axios.get("https://api.github.com/users");
     this.setState({
       users: res.data,
       loading: false
     });
   }
 
+  // Search github users
   searchUsers = async text => {
     this.setState({ loading: true });
     const res = await axios.get(
@@ -39,7 +41,17 @@ class App extends Component {
     });
   };
 
-  // Clear Users
+  // Get a single github user
+  getUser = async username => {
+    this.setState({ loading: true });
+    const res = await axios.get(`https://api.github.com/users/${username}`);
+    this.setState({
+      user: res.data,
+      loading: false
+    });
+  };
+
+  // Clear Users from state
   clearUsers = () => this.setState({ users: [], loading: false });
 
   // Set Alert
