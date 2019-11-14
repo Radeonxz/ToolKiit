@@ -5,6 +5,7 @@ import Navbar from "./components/layout/Navbar";
 import Alert from "./components/layout/Alert/Alert";
 import About from "./components/pages/About";
 import Users from "./components/users/Users";
+import User from "./components/users/User";
 import Search from "./components/users/Search";
 import "./App.css";
 
@@ -61,7 +62,7 @@ class App extends Component {
   };
 
   render() {
-    const { alert, users, loading } = this.state;
+    const { alert, users, user, loading } = this.state;
 
     return (
       <Router>
@@ -86,6 +87,18 @@ class App extends Component {
                 )}
               />
               <Route exact path="/about" component={About} />
+              <Route
+                exact
+                path="/user/:login"
+                render={props => (
+                  <User
+                    {...props}
+                    getUser={this.getUser}
+                    user={user}
+                    loading={loading}
+                  />
+                )}
+              />
             </Switch>
           </div>
         </div>
