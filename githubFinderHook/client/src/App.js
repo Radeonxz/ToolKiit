@@ -34,16 +34,6 @@ const App = () => {
     // eslint-disable-next-line
   }, []);
 
-  // Search github users
-  const searchUsers = async text => {
-    setLoading(true);
-    const res = await axios.get(
-      `https://api.github.com/search/users?q=${text}`
-    );
-    setUsers(res.data.items);
-    setLoading(false);
-  };
-
   // Get a single github user
   const getUser = async username => {
     setLoading(true);
@@ -89,7 +79,6 @@ const App = () => {
                   <Fragment>
                     <Search
                       {...props}
-                      searchUsers={searchUsers}
                       clearUsers={clearUsers}
                       showClear={users.length > 0 ? true : false}
                       setAlert={showAlert}
