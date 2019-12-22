@@ -4,8 +4,6 @@ import UserItem from "./UserItem";
 import Spinner from "../layout/Spinner/Spinner";
 
 const Users = ({ users, loading }) => {
-  console.log("users is", users);
-  console.log("loading is", loading);
   return loading ? (
     <Spinner />
   ) : (
@@ -18,8 +16,8 @@ const Users = ({ users, loading }) => {
 };
 
 UserItem.propTypes = {
-  users: PropTypes.array.isRequired,
-  loading: PropTypes.bool.isRequired
+  // users: PropTypes.array.isRequired,
+  // loading: PropTypes.bool.isRequired
 };
 
 const userStyle = {
