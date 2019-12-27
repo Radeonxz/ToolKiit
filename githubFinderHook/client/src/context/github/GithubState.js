@@ -10,7 +10,6 @@ import {
   GET_REPOS,
   SET_LOADING
 } from "../types";
-import githubContext from "./githubContext";
 
 const GithubState = props => {
   const initialState = {
@@ -28,10 +27,9 @@ const GithubState = props => {
     const res = await axios.get(
       `https://api.github.com/search/users?q=${text}`
     );
-
     dispatch({
-      types: SEARCH_USERS,
-      payload: res.data
+      type: SEARCH_USERS,
+      payload: res.data.items
     });
   };
 
@@ -45,7 +43,7 @@ const GithubState = props => {
   const setLoading = () => dispatch({ type: SET_LOADING });
 
   return (
-    <githubContext.Provider
+    <GithubContext.Provider
       value={{
         users: state.users,
         user: state.user,
@@ -56,7 +54,7 @@ const GithubState = props => {
       }}
     >
       {props.children}
-    </githubContext.Provider>
+    </GithubContext.Provider>
   );
 };
 
