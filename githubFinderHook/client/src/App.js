@@ -13,26 +13,25 @@ import GithubState from "./context/github/GithubState";
 import "./App.css";
 
 const App = () => {
-  const [users, setUsers] = useState([]);
   const [user, setUser] = useState({});
   const [repos, setRepos] = useState([]);
   const [loading, setLoading] = useState(false);
   const [alert, setAlert] = useState(null);
 
-  useEffect(() => {
-    setLoading(true);
-    // env variables
-    // const clientId = process.env.REACT_APP_GITHUB_CLIENT_ID;
-    // const clientSecret = process.env.REACT_APP_GITHUB_CLIENT_SECRET;
-    // const res = await axios.get(`https://api.github.com/users?client_id=${clientId}&client_secret=${clientSecret}`);
-    const fetchUser = async () => {
-      const res = await axios.get("https://api.github.com/users");
-      setUsers(res.data);
-    };
-    fetchUser();
-    setLoading(false);
-    // eslint-disable-next-line
-  }, []);
+  // useEffect(() => {
+  //   setLoading(true);
+  //   // env variables
+  //   // const clientId = process.env.REACT_APP_GITHUB_CLIENT_ID;
+  //   // const clientSecret = process.env.REACT_APP_GITHUB_CLIENT_SECRET;
+  //   // const res = await axios.get(`https://api.github.com/users?client_id=${clientId}&client_secret=${clientSecret}`);
+  //   const fetchUser = async () => {
+  //     const res = await axios.get("https://api.github.com/users");
+  //     setUsers(res.data);
+  //   };
+  //   fetchUser();
+  //   setLoading(false);
+  //   // eslint-disable-next-line
+  // }, []);
 
   // Get a single github user
   const getUser = async username => {
