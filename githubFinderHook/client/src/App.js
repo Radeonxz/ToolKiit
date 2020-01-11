@@ -13,7 +13,6 @@ import GithubState from "./context/github/GithubState";
 import "./App.css";
 
 const App = () => {
-  const [user, setUser] = useState({});
   const [repos, setRepos] = useState([]);
   const [loading, setLoading] = useState(false);
   const [alert, setAlert] = useState(null);
@@ -32,14 +31,6 @@ const App = () => {
   //   setLoading(false);
   //   // eslint-disable-next-line
   // }, []);
-
-  // Get a single github user
-  const getUser = async username => {
-    setLoading(true);
-    const res = await axios.get(`https://api.github.com/users/${username}`);
-    setUser(res.data);
-    setLoading(false);
-  };
 
   // Get user's repos
   const getUserRepos = async username => {
@@ -80,14 +71,7 @@ const App = () => {
                 exact
                 path="/user/:login"
                 render={props => (
-                  <User
-                    {...props}
-                    getUser={getUser}
-                    getUserRepos={getUserRepos}
-                    user={user}
-                    repos={repos}
-                    loading={loading}
-                  />
+                  <User {...props} getUserRepos={getUserRepos} repos={repos} />
                 )}
               />
             </Switch>

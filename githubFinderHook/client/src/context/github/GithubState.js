@@ -34,6 +34,14 @@ const GithubState = props => {
   };
 
   // Get user
+  const getUser = async username => {
+    setLoading();
+    const res = await axios.get(`https://api.github.com/users/${username}`);
+    dispatch({
+      type: GET_USER,
+      payload: res.data
+    });
+  };
 
   // Get repos
 
@@ -55,7 +63,8 @@ const GithubState = props => {
         loading: state.loading,
         // funcs
         searchUsers,
-        clearUsers
+        clearUsers,
+        getUser
       }}
     >
       {props.children}
