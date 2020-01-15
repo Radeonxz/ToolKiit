@@ -4,6 +4,7 @@ import GithubContext from "./githubContext";
 import GithubReducer from "./githubReducer";
 
 import {
+  FETCH_DEFAULT_USERS,
   SEARCH_USERS,
   GET_USER,
   CLEAR_USERS,
@@ -20,6 +21,20 @@ const GithubState = props => {
   };
 
   const [state, dispatch] = useReducer(GithubReducer, initialState);
+
+  // Get all default users
+  // env variables
+  // const clientId = process.env.REACT_APP_GITHUB_CLIENT_ID;
+  // const clientSecret = process.env.REACT_APP_GITHUB_CLIENT_SECRET;
+  // const res = await axios.get(`https://api.github.com/users?client_id=${clientId}&client_secret=${clientSecret}`);
+  const fetchDefaultUser = async () => {
+    setLoading();
+    const res = await axios.get("https://api.github.com/users");
+    dispatch({
+      type: FETCH_DEFAULT_USERS,
+      payload: res.data
+    });
+  };
 
   // Search users
   const searchUsers = async text => {
@@ -62,6 +77,7 @@ const GithubState = props => {
         repos: state.repos,
         loading: state.loading,
         // funcs
+        fetchDefaultUser,
         searchUsers,
         clearUsers,
         getUser
