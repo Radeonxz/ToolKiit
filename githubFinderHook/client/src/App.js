@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect, useContext } from "react";
+import React, { Fragment, useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import axios from "axios";
 import Navbar from "./components/layout/Navbar";
@@ -10,7 +10,6 @@ import Search from "./components/users/Search";
 
 // import context and state
 import GithubState from "./context/github/GithubState";
-import GithubContext from "./context/github/githubContext";
 
 import "./App.css";
 
@@ -18,12 +17,6 @@ const App = () => {
   const [repos, setRepos] = useState([]);
   const [loading, setLoading] = useState(false);
   const [alert, setAlert] = useState(null);
-
-  const githubContext = useContext(GithubContext);
-
-  useEffect(() => {
-    githubContext.fetchDefaultUser();
-  }, []);
 
   // Get user's repos
   const getUserRepos = async username => {
