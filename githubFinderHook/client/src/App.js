@@ -27,10 +27,12 @@ const App = () => {
                   exact
                   path="/"
                   render={props => (
-                    <Fragment>
+                    // <Fragment>
+                    <>
                       <Search />
                       <Users />
-                    </Fragment>
+                    </>
+                    // </Fragment>
                   )}
                 />
                 <Route exact path="/about" component={About} />
