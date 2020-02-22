@@ -1,9 +1,11 @@
-const path = require('path');
+const path = require("path");
 
-global.__base = __dirname + '/';
+global.__base = __dirname + "/";
 
-const { urlScreenShot } = require(path.join(__base, 'tools/urlScreenShot/index'));
+const { urlScreenShot } = require(path.join(
+  __base,
+  "tools/urlScreenShot/index"
+));
 
-
-const url = '';
+const url = "";
 urlScreenShot(url);
