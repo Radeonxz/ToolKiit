@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import GithubContext from "../../context/github/githubContext";
 import Spinner from "../layout/Spinner/Spinner";
@@ -32,7 +32,7 @@ const User = ({ match }) => {
   if (loading) return <Spinner />;
 
   return (
-    <Fragment>
+    <>
       <Link to="/" className="btn btn-light">
         Back to Search
       </Link>
@@ -55,10 +55,10 @@ const User = ({ match }) => {
         </div>
         <div>
           {bio && (
-            <Fragment>
+            <>
               <h3>Bio</h3>
               <p>{bio}</p>
-            </Fragment>
+            </>
           )}
           <a href={html_url} className="btn btn-dark my-1">
             Visit Github Profile
@@ -66,26 +66,26 @@ const User = ({ match }) => {
           <ul>
             <li>
               {login && (
-                <Fragment>
+                <>
                   <strong>Username: </strong>
                   {login}
-                </Fragment>
+                </>
               )}
             </li>
             <li>
               {company && (
-                <Fragment>
+                <>
                   <strong>Company: </strong>
                   {company}
-                </Fragment>
+                </>
               )}
             </li>
             <li>
               {blog && (
-                <Fragment>
+                <>
                   <strong>Website: </strong>
                   {blog}
-                </Fragment>
+                </>
               )}
             </li>
           </ul>
@@ -98,7 +98,7 @@ const User = ({ match }) => {
         <div className="badge badge-dark">Public Gists: {public_gists}</div>
       </div>
       <Repos repos={repos} />
-    </Fragment>
+    </>
   );
 };
 

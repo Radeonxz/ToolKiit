@@ -7,6 +7,9 @@ const Repos = ({ repos }) => {
 };
 
 Repos.propTypes = {
+  /**
+   * Repos array
+   */
   repos: PropTypes.array.isRequired
 };
 
