@@ -7,7 +7,7 @@ import { useAsyncEffect } from "./utils/hooks";
 
 // import components
 import Navbar from "./components/layout/Navbar";
-import Alert from "./components/layout/Alert/Alert";
+import Search from "./components/users/Search";
 import Users from "./components/users/Users";
 import About from "./components/pages/About";
 import "./App.css";
@@ -15,6 +15,7 @@ import "./App.css";
 const App = () => {
   const [loading, setLoading] = useState(false);
   const [users, setUsers] = useState([]);
+  const [alert, setAlertState] = useState({});
 
   useAsyncEffect(async () => {
     setLoading(true);
@@ -23,21 +24,43 @@ const App = () => {
     setUsers(res.data);
   }, []);
 
+  // Search github users
+  const searchUsers = async (text: string) => {
+    setLoading(true);
+    const res = await axios.get(
+      `https://api.github.com/search/users?q=${text}`
+    );
+    setLoading(false);
+    setUsers(res.data.items);
+  };
+
+  // Clear Users from state
+  const clearUsers = () => {
+    setLoading(false);
+    setUsers([]);
+  };
+
+  // Set Alert
+  const setAlert = (msg: string, alertType: string) => {
+    setAlertState({ msg, alertType });
+    setTimeout(() => setAlertState({}), 2500);
+  };
+
   return (
     <Router>
       <div className="App">
         <Navbar />
         <div className="container">
           <Switch>
-            <Route
-              exact
-              path="/"
-              render={props => (
-                <>
-                  <Users loading={loading} users={users} />
-                </>
-              )}
-            />
+            <Route exact path="/">
+              <Search
+                searchUsers={searchUsers}
+                clearUsers={clearUsers}
+                setAlert={setAlert}
+                showClear={users.length > 0 ? true : false}
+              />
+              <Users loading={loading} users={users} />
+            </Route>
             <Route exact path="/about" component={About} />
           </Switch>
         </div>
