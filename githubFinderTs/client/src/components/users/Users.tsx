@@ -3,19 +3,19 @@ import React from "react";
 import UserItem from "./UserItem";
 import Spinner from "../layout/Spinner/Spinner";
 
-interface IUser {
+interface User {
   id: string;
   login: string;
   avatar_url: string;
   html_url: string;
 }
 
-interface IProps {
-  users: IUser[];
+interface Props {
+  users: User[];
   loading: boolean;
 }
 
-const Users = ({ users, loading }: IProps) => {
+const Users = ({ users, loading }: Props) => {
   return loading ? (
     <Spinner />
   ) : (

@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-interface IProps {
+interface Props {
   user: {
     login: string;
     avatar_url: string;
@@ -10,7 +10,7 @@ interface IProps {
   };
 }
 
-const UserItem = ({ user: { login, avatar_url, html_url } }: IProps) => {
+const UserItem = ({ user: { login, avatar_url, html_url } }: Props) => {
   return (
     <div className="card text-center">
       <img
