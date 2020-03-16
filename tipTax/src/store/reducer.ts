@@ -28,11 +28,11 @@ export const rootReducer: Reducer<StoreState, Actions> = (
     case ActionTypes.SplitIncrement:
       return {
         ...state,
-        split: state.split++,
+        split: state.split + 1,
       };
 
     case ActionTypes.SplitDecrement:
-      const split = state.split--;
+      const split = state.split - 1;
       return {
         ...state,
         split: split > 1 ? split : state.split,
