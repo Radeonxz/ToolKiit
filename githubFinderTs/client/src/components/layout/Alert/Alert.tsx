@@ -7,7 +7,7 @@ export interface Props {
   };
 }
 
-const Alert = ({ alert }: Props) => {
+const Alert = ({ alert }: any) => {
   return (
     alert !== null && (
       <div className={`alert alert-${alert.alertType}`}>

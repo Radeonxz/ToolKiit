@@ -8,6 +8,7 @@ import { useAsyncEffect } from "./utils/hooks";
 // import components
 import Navbar from "./components/layout/Navbar";
 import Search from "./components/users/Search";
+import Alert from "./components/layout/Alert";
 import Users from "./components/users/Users";
 import About from "./components/pages/About";
 import "./App.css";
@@ -15,7 +16,7 @@ import "./App.css";
 const App = () => {
   const [loading, setLoading] = useState(false);
   const [users, setUsers] = useState([]);
-  const [alert, setAlertState] = useState({});
+  const [alert, setAlertState] = useState<null | object>(null);
 
   useAsyncEffect(async () => {
     setLoading(true);
@@ -43,14 +44,19 @@ const App = () => {
   // Set Alert
   const setAlert = (msg: string, alertType: string) => {
     setAlertState({ msg, alertType });
-    setTimeout(() => setAlertState({}), 2500);
+    setTimeout(() => setAlertState(null), 2500);
   };
+
+  const UntypedAlert = Alert as any;
 
   return (
     <Router>
       <div className="App">
         <Navbar />
         <div className="container">
+          <>
+            <UntypedAlert alert={alert} />
+          </>
           <Switch>
             <Route exact path="/">
               <Search
