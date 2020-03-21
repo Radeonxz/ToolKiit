@@ -1,13 +1,23 @@
 import * as React from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-import { StoreState } from "../store";
 import { ActionTypes } from "../store/actions";
+import {
+  selectBill,
+  selectPercentage,
+  selectPerPerson,
+  selectTotal,
+  selectSplit,
+  selectTip,
+} from "../store/selectors";
 
 export const TipCalculator = () => {
-  const bill = useSelector((state: StoreState) => state.bill);
-  const percentage = useSelector((state: StoreState) => state.percentage);
-  const split = useSelector((state: StoreState) => state.split);
+  const bill = useSelector(selectBill);
+  const percentage = useSelector(selectPercentage);
+  const split = useSelector(selectSplit);
+  const total = useSelector(selectTotal);
+  const perPerson = useSelector(selectPerPerson);
+  const tip = useSelector(selectTip);
 
   const dispatch = useDispatch();
 
@@ -51,6 +61,10 @@ export const TipCalculator = () => {
       <button onClick={() => dispatch({ type: ActionTypes.Reset })}>
         RESET
       </button>
+
+      <div>Bill Total: {total}</div>
+      <div>Tip: {tip}</div>
+      <div>Per Person: {perPerson}</div>
     </div>
   );
 };
