@@ -2,7 +2,7 @@ import React, { Fragment, useEffect } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import Spinner from "../layout/Spinner/Spinner";
-// import Repos from "../repos/Repos";
+import Repos from "../repos/Repos";
 
 interface Props {
   match: {
@@ -27,7 +27,14 @@ interface Props {
     public_gists: string;
     hireable: string;
   };
+  repos: repo[];
   loading: boolean;
+}
+
+interface repo {
+  html_url: string;
+  name: string;
+  id: string;
 }
 
 const User = ({
@@ -35,6 +42,7 @@ const User = ({
   getUser,
   getUserRepos,
   user,
+  repos,
   loading
 }: Props) => {
   useEffect(() => {
@@ -59,6 +67,7 @@ const User = ({
   } = user;
 
   if (loading) return <Spinner />;
+  const UntypedRepos = Repos as any;
 
   return (
     <Fragment>
@@ -125,7 +134,7 @@ const User = ({
         <div className="badge badge-light">Public Repos: {public_repos}</div>
         <div className="badge badge-dark">Public Gists: {public_gists}</div>
       </div>
-      {/* <Repos repos={repos} /> */}
+      <UntypedRepos repos={repos} />
     </Fragment>
   );
 };
