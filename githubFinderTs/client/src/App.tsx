@@ -88,19 +88,10 @@ const App = () => {
               <Users loading={loading} users={users} />
             </Route>
             <Route exact path="/about" component={About} />
-            {/* <Route exact path="/user/:login">
-              <UntypedUser
-                getUser={getUser}
-                getUserRepos={getUserRepos}
-                user={user}
-                // repos={repos}
-                loading={loading}
-              />
-            </Route> */}
             <Route
               exact
               path="/user/:login"
-              render={props => (
+              render={(props) => (
                 <UntypedUser
                   {...props}
                   getUser={getUser}
