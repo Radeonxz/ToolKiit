@@ -2,7 +2,7 @@ import { Reducer } from "redux";
 import { StoreState } from "./";
 import { Actions, ActionTypes } from "./actions";
 
-const initialState: StoreState = {
+export const initialState: StoreState = {
   bill: 0,
   percentage: 0,
   split: 1,
