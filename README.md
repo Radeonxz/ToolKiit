@@ -8,28 +8,30 @@ Front-end React application built with `Github` public api.
 
 ### Pure React
 
-Repo [link](https://github.com/Radeonxz/ToolKiits/tree/master/githubFinder/client)
+Repo: [link](https://github.com/Radeonxz/ToolKiits/tree/master/githubFinder/client)
 
 ### Hooks and context api
 
-Repo [link](https://github.com/Radeonxz/ToolKiits/tree/master/githubFinderHook/client)
+Repo: [link](https://github.com/Radeonxz/ToolKiits/tree/master/githubFinderHook/client)
 
 ### TypeScript
 
-Repo [link](https://github.com/Radeonxz/ToolKiits/tree/master/githubFinderTs/client)
+Repo: [link](https://github.com/Radeonxz/ToolKiits/tree/master/githubFinderTs/client)
 
 ## TipTax Calculator
 
 Front-end React application to calculate tip/tax/split.
 
-Repo [link](https://github.com/Radeonxz/ToolKiits/tree/master/tipTax)
+Repo: [link](https://github.com/Radeonxz/ToolKiits/tree/master/tipTax)
 
-## VideoRecord
+## ScreenRecorder
 
-Electron recording application.
+Electron screen recorder application.
+
+Repo: [link](https://github.com/Radeonxz/ToolKiits/tree/master/screenRecorder)
 
 ## WebSnap
 
 Local tool to take screen shot of given url.
 
-Repo [link](https://github.com/Radeonxz/ToolKiits/tree/master/webSnap)
+Repo: [link](https://github.com/Radeonxz/ToolKiits/tree/master/webSnap)
