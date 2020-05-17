@@ -69,10 +69,7 @@ const generateHeader = (doc, contractor) => {
 };
 
 const generateCustomerInformation = (doc, invoice, taxes, invoiceEdge) => {
-  doc
-    .fillColor("#444444")
-    .fontSize(20)
-    .text("Invoice", 50, invoiceEdge);
+  doc.fillColor("#444444").fontSize(20).text("Invoice", 50, invoiceEdge);
 
   generateHr(doc, 185);
 
@@ -235,19 +232,14 @@ const generateTableRow = (
 };
 
 const generateHr = (doc, y) => {
-  doc
-    .strokeColor("#aaaaaa")
-    .lineWidth(1)
-    .moveTo(50, y)
-    .lineTo(550, y)
-    .stroke();
+  doc.strokeColor("#aaaaaa").lineWidth(1).moveTo(50, y).lineTo(550, y).stroke();
 };
 
-const formatCurrency = cents => {
+const formatCurrency = (cents) => {
   return "$" + (cents / 100).toFixed(2);
 };
 
-const calTax = cents => {
+const calTax = (cents) => {
   const tax = {
     gst: 5,
     qst: 9.975
@@ -260,7 +252,7 @@ const calTax = cents => {
   };
 };
 
-const formatDate = date => {
+const formatDate = (date) => {
   let day = date.getDate();
   day = day < 10 ? `0${day}` : day;
   const months = [
