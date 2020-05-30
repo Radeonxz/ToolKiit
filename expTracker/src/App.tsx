@@ -1,6 +1,7 @@
 import React from "react";
 
 import Header from "./components/Header";
+import Balance from "./components/Balance";
 
 import "./App.css";
 
@@ -8,7 +9,9 @@ const App = () => {
   return (
     <>
       <Header />
-      <div>Hello World...</div>
+      <div className="container">
+        <Balance />
+      </div>
     </>
   );
 };
