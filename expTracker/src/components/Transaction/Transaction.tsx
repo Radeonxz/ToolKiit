@@ -11,10 +11,10 @@ const Transaction = ({ transaction }: Props) => {
   const sign = transaction.amount < 0 ? "-" : "+";
 
   return (
-    <li className="minus">
+    <li className={transaction.amount < 0 ? "minus" : "plus"}>
       {transaction.text}
       <span>
-        {sign}${transaction.amount}
+        {sign}${Math.abs(transaction.amount)}
       </span>
       <button className="delete-btn">x</button>
     </li>
