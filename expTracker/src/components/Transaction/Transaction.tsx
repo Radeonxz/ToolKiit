@@ -14,7 +14,7 @@ const Transaction = ({ transaction }: Props) => {
     <li className="minus">
       {transaction.text}
       <span>
-        {sign}${transaction.amount}
+        {sign}${Math.abs(transaction.amount)}
       </span>
       <button className="delete-btn">x</button>
     </li>
