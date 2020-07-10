@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
+import { GlobalContext } from "../../context/GlobalState";
 
-interface Props {
+interface ITransaction {
   transaction: {
+    id: number;
     text: string;
     amount: number;
   };
 }
 
-const Transaction = ({ transaction }: Props) => {
+const Transaction = ({ transaction }: ITransaction) => {
+  const { deleteTransaction }: any = useContext(GlobalContext);
   const sign = transaction.amount < 0 ? "-" : "+";
 
   return (
@@ -16,7 +19,12 @@ const Transaction = ({ transaction }: Props) => {
       <span>
         {sign}${Math.abs(transaction.amount)}
       </span>
-      <button className="delete-btn">x</button>
+      <button
+        onClick={() => deleteTransaction(transaction.id)}
+        className="delete-btn"
+      >
+        x
+      </button>
     </li>
   );
 };
