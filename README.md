@@ -2,9 +2,15 @@
 
 Miscellaneous useful tools
 
+## ExpTracker
+
+React application to track expense.
+
+Repo: [link](https://github.com/Radeonxz/ToolKiits/tree/master/expTracker)
+
 ## Github Finder
 
-Front-end React application built with `Github` public api.
+React application built with `Github` public api.
 
 ### Pure React
 
@@ -18,11 +24,11 @@ Repo: [link](https://github.com/Radeonxz/ToolKiits/tree/master/githubFinderHook/
 
 Repo: [link](https://github.com/Radeonxz/ToolKiits/tree/master/githubFinderTs/client)
 
-## TipTax Calculator
+## PDFGenerator
 
-Front-end React application to calculate tip/tax/split.
+Local Express tool to generate invoice as PDF.
 
-Repo: [link](https://github.com/Radeonxz/ToolKiits/tree/master/tipTax)
+Repo: [link](https://github.com/Radeonxz/ToolKiits/tree/master/pdfGenerator)
 
 ## ScreenRecorder
 
@@ -30,8 +36,14 @@ Electron screen recorder application.
 
 Repo: [link](https://github.com/Radeonxz/ToolKiits/tree/master/screenRecorder)
 
+## TipTax Calculator
+
+React application to calculate tip/tax/split.
+
+Repo: [link](https://github.com/Radeonxz/ToolKiits/tree/master/tipTax)
+
 ## WebSnap
 
-Local tool to take screen shot of given url.
+Local Express tool to take screen shot of given url.
 
 Repo: [link](https://github.com/Radeonxz/ToolKiits/tree/master/webSnap)
