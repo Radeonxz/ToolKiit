@@ -14,15 +14,15 @@ React application built with `Github` public api.
 
 ### Pure React
 
-Repo: [link](https://github.com/Radeonxz/ToolKiits/tree/master/githubFinder/client)
+Repo: [link](https://github.com/Radeonxz/ToolKiits/tree/master/githubFinder)
 
 ### Hooks and context api
 
-Repo: [link](https://github.com/Radeonxz/ToolKiits/tree/master/githubFinderHook/client)
+Repo: [link](https://github.com/Radeonxz/ToolKiits/tree/master/githubFinderHook)
 
 ### TypeScript
 
-Repo: [link](https://github.com/Radeonxz/ToolKiits/tree/master/githubFinderTs/client)
+Repo: [link](https://github.com/Radeonxz/ToolKiits/tree/master/githubFinderTs)
 
 ## PDFGenerator
 
