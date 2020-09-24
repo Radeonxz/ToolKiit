@@ -30,6 +30,12 @@ Local Express tool to generate invoice as PDF.
 
 Repo: [link](https://github.com/Radeonxz/ToolKiits/tree/master/pdfGenerator)
 
+## Quizzz
+
+Quiz app.
+
+Repo: [link](https://github.com/Radeonxz/ToolKiits/tree/master/quizzz)
+
 ## ScreenRecorder
 
 Electron screen recorder application.
