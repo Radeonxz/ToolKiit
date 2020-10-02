@@ -32,25 +32,44 @@ const App = () => {
 
     const newQuestions = await fetchQuizQuestions(
       TOTAL_QUESTIONS,
-      Difficulty.EASY
+      Difficulty.EASY,
     );
 
     setQuestions(newQuestions);
     setLoading(false);
   };
 
-  const checkAnswer = (e: React.MouseEvent<HTMLButtonElement>) => {};
+  const checkAnswer = (e: React.MouseEvent<HTMLButtonElement>) => {
+    if (!gameOver) {
+      // users answer
+      const answer = e.currentTarget.value;
+      // check answer with correct answer
+      const correct = questions[number].correct_answer === answer;
+
+      if (correct) setScore((prev) => prev + 1);
+      const answerObject = {
+        question: questions[number].question,
+        answer,
+        correct,
+        correctAnswer: questions[number].correct_answer,
+      };
+
+      setUserAnswers((prev) => [...prev, answerObject]);
+    }
+  };
 
   const nextQuestion = () => {};
 
   return (
     <div className="App">
       <h1>Quizzz</h1>
-      {gameOver || userAnswers.length === TOTAL_QUESTIONS ? (
-        <button className="start" onClick={startTrivia}>
-          Start
-        </button>
-      ) : null}
+      {gameOver || userAnswers.length === TOTAL_QUESTIONS
+        ? (
+          <button className="start" onClick={startTrivia}>
+            Start
+          </button>
+        )
+        : null}
 
       {!gameOver && <p className="score">Score:</p>}
       {loading && <p>Loading Questions...</p>}
