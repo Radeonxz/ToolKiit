@@ -70,6 +70,16 @@ const App = () => {
     }
   };
 
+  // questionCard props
+  const questionCardProps = {
+    questionNr: number + 1,
+    totalQuestions:TOTAL_QUESTIONS,
+    question: questions[number].question,
+    answers: questions[number].answers,
+    userAnswer: userAnswers ? userAnswers[number] : undefined,
+    callback: checkAnswer
+  }
+
   return (
     <>
       <GlobalStyle />
@@ -84,14 +94,7 @@ const App = () => {
         {!gameOver && <p className="score">Score: {score}</p>}
         {loading && <p>Loading Questions...</p>}
         {!loading && !gameOver && (
-          <QuestionCard
-            questionNr={number + 1}
-            totalQuestions={TOTAL_QUESTIONS}
-            question={questions[number].question}
-            answers={questions[number].answers}
-            userAnswer={userAnswers ? userAnswers[number] : undefined}
-            callback={checkAnswer}
-          />
+          <QuestionCard {...questionCardProps}/>
         )}
         {!gameOver &&
           !loading &&
