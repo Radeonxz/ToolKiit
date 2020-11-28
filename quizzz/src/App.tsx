@@ -30,8 +30,8 @@ const App = () => {
     setLoading(true);
     setGameOver(false);
     setScore(0);
-    setUserAnswers([]);
     setNumber(0);
+    setUserAnswers([]);
 
     const newQuestions = await fetchQuizQuestions(
       TOTAL_QUESTIONS,
@@ -49,7 +49,7 @@ const App = () => {
       // check answer with correct answer
       const correct = questions[number].correct_answer === answer;
 
-      if (correct) setScore((prev) => prev + 1);
+      if (correct) setScore((prev: number) => prev + 1);
       const answerObject = {
         question: questions[number].question,
         answer,
@@ -57,7 +57,7 @@ const App = () => {
         correctAnswer: questions[number].correct_answer
       };
 
-      setUserAnswers((prev) => [...prev, answerObject]);
+      setUserAnswers((prev: any) => [...prev, answerObject]);
     }
   };
 
