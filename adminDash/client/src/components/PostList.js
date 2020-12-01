@@ -1,10 +1,16 @@
-import { List, Datagrid, TestField, DataField, EditButton, DeleteButton } from 'react-admin';
+import { List, Datagrid, TextField, DataField, EditButton, DeleteButton } from 'react-admin';
 
-const PostList = () => {
+const PostList = (props) => {
   return (
-    <div>
-
-    </div>
+    <List {...props}>
+      <Datagrid>
+        <TextField source='id' />
+        <TextField source='title' />
+        <DateField source='publishedAt' />
+        <EditButton basePath='/posts' />
+        <DeleteButton basePath='/posts' />
+      </Datagrid>
+    </List>
   )
 }
 
