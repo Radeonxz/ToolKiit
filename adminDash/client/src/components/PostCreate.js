@@ -1,4 +1,4 @@
-import { Create, SimpleForm, TextInput, DeleteInput } from 'react-admin';
+import { Create, SimpleForm, TextInput } from 'react-admin';
 
 const PostCreate = (props) => {
   return (
