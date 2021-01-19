@@ -1,13 +1,12 @@
-import { Edit, SimpleForm, TextInput, DateInput } from 'react-admin';
+import { Edit, SimpleForm, TextInput } from 'react-admin';
 
 const UserEdit = (props) => {
   return (
     <Edit title='Edit User' {...props}>
       <SimpleForm>
         <TextInput disabled source='id' />
-        <TextInput source='title' />
-        <TextInput multiline source='body' />
-        <DateInput label='Published' source='publishedAt' />
+        <TextInput source='name' />
+        <TextInput source='email' />
       </SimpleForm>
     </Edit>
   )
