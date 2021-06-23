@@ -24,6 +24,12 @@ Repo: [link](https://github.com/Radeonxz/ToolKiits/tree/master/githubFinderHook)
 
 Repo: [link](https://github.com/Radeonxz/ToolKiits/tree/master/githubFinderTs)
 
+## NextMeet
+
+Meetups app with NextJS.
+
+Repo: [link](https://github.com/Radeonxz/ToolKiits/tree/master/nextMeet)
+
 ## PDFGenerator
 
 Local Express tool to generate invoice as PDF.
