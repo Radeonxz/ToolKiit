@@ -1,13 +1,15 @@
+import { LayoutProps } from "./Layout.model";
+
 import MainNavigation from "../MainNavigation";
 import "./styles.css";
 
-function Layout(props: any) {
+const Layout = ({ children }: LayoutProps) => {
   return (
     <div>
       <MainNavigation />
-      <main className="main">{props.children}</main>
+      <main className="main">{children}</main>
     </div>
   );
-}
+};
 
 export default Layout;
