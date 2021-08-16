@@ -1,9 +1,12 @@
+import PropTypes from "prop-types";
+
+import Button from "./Button";
+
 const Header = ({ title }) => {
   return (
-    <header>
-      {/* <h1>{name}</h1> */}
-      {/* <h1>{age}</h1> */}
+    <header className="header">
       <h1>{title}</h1>
+      <Button color="green" text="Hello" />
     </header>
   );
 };
@@ -11,5 +14,15 @@ const Header = ({ title }) => {
 Header.defaultProps = {
   title: "Task Tracker"
 };
+
+Header.protoTypes = {
+  title: PropTypes.string
+};
+
+// CSS
+// const headingStyle = {
+//   color: "red",
+//   backgroundColor: "black"
+// };
 
 export default Header;
