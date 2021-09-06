@@ -1,9 +1,12 @@
 import PropTypes from "prop-types";
 import { FaTimes } from "react-icons/fa";
 
-const Task = ({ task: { id, text, day }, onDelete }) => {
+const Task = ({ task: { id, text, day, reminder }, onDelete, onToggle }) => {
   return (
-    <div className="task">
+    <div
+      className={`task ${reminder ? "reminder" : ""}`}
+      onDoubleClick={() => onToggle(id)}
+    >
       <h3>
         {text}{" "}
         <FaTimes
