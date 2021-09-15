@@ -19,7 +19,8 @@ const Tasks = ({ tasks, onDelete, onToggle }) => {
 
 Tasks.protoTypes = {
   tasks: PropTypes.array,
-  onDelete: PropTypes.func
+  onDelete: PropTypes.func,
+  onToggle: PropTypes.func
 };
 
 export default Tasks;
