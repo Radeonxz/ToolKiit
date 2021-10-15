@@ -1,4 +1,4 @@
-import "./styles.css";
+import "./MainNavigation.module.css";
 
 function MainNavigation() {
   return (

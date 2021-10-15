@@ -1,7 +1,7 @@
 import { LayoutProps } from "./Layout.model";
 
 import MainNavigation from "../MainNavigation";
-import "./styles.css";
+import "./Layout.module.css";
 
 const Layout = ({ children }: LayoutProps) => {
   return (
