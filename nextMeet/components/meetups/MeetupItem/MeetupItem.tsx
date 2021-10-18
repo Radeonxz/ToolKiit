@@ -1,9 +1,10 @@
 import Image from "next/image";
 
+import { MeetupItemProps } from "./MeetupItem.models";
 import Card from "../../ui/Card";
 import classes from "./MeetupItem.module.css";
 
-function MeetupItem(props: any) {
+function MeetupItem(props: MeetupItemProps) {
   return (
     <li className={classes.item}>
       <Card>
