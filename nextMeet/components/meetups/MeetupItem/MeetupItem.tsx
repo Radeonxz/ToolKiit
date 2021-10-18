@@ -1,14 +1,21 @@
 import Image from "next/image";
 
+import { MeetupItemProps } from "./MeetupItem.models";
 import Card from "../../ui/Card";
 import classes from "./MeetupItem.module.css";
 
-function MeetupItem(props: any) {
-  console.log("props: ", props);
+function MeetupItem(props: MeetupItemProps) {
   return (
     <li className={classes.item}>
       <Card>
-        <div className={classes.image}>
+        <div
+          /*className={classes.image}*/
+          style={{
+            position: "relative",
+            width: "100%",
+            height: "25rem"
+          }}
+        >
           <Image
             src={props.image}
             alt={props.title}
