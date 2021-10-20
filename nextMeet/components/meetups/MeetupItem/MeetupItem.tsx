@@ -1,10 +1,16 @@
+import { useRouter } from "next/router";
 import Image from "next/image";
 
 import { MeetupItemProps } from "./MeetupItem.models";
 import Card from "../../ui/Card";
 import classes from "./MeetupItem.module.css";
 
-function MeetupItem(props: MeetupItemProps) {
+const MeetupItem = (props: MeetupItemProps) => {
+  const router = useRouter();
+  const showDetailsOnClick = () => {
+    router.push(`/${props.id}`);
+  };
+
   return (
     <li className={classes.item}>
       <Card>
@@ -13,7 +19,7 @@ function MeetupItem(props: MeetupItemProps) {
           style={{
             position: "relative",
             width: "100%",
-            height: "25rem"
+            height: "20rem"
           }}
         >
           <Image
@@ -28,11 +34,11 @@ function MeetupItem(props: MeetupItemProps) {
           <address>{props.address}</address>
         </div>
         <div className={classes.actions}>
-          <button>Show Details</button>
+          <button onClick={showDetailsOnClick}>Show Details</button>
         </div>
       </Card>
     </li>
   );
-}
+};
 
 export default MeetupItem;

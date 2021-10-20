@@ -1,9 +1,9 @@
 import { CardProps } from "./Card.model";
 
-import "./Card.module.css";
+import classes from "./Card.module.css";
 
 const Card = ({ children }: CardProps) => {
-  return <div className="card">{children}</div>;
+  return <div className={classes.card}>{children}</div>;
 };
 
 export default Card;
