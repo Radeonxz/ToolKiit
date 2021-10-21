@@ -1,2 +1,2 @@
 // domain.com/new-meetup
-export { default } from "./NewMeetup";
+export { default } from "./NewMeetupPage";
