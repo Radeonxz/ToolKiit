@@ -17,8 +17,29 @@ const meetupData = [
   }
 ];
 
-const HomePage = () => {
-  return <MeetupList meetups={meetupData} />;
+const HomePage = ({ meetups }: any) => {
+  return <MeetupList meetups={meetups} />;
+};
+
+// export const getServerSideProps = (context: any) => {
+// 	const req = context.req;
+// 	const res = context.res;
+
+//   return {
+//     props: {
+//       meetups: meetupData
+//     }
+//   };
+// };
+
+export const getStaticProps = async () => {
+  return {
+    props: {
+      meetups: meetupData
+    },
+    // regenerate the page by interval
+    revalidate: 1
+  };
 };
 
 export default HomePage;
