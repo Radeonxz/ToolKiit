@@ -1,0 +1,5 @@
+API_BASE_URL="https://api.openweathermap.org/data/2.5/weather"
+API_KEY_NAME="appid"
+API_KEY_VALUE="foo"
+API_LIMIT=100
+API_CACHE_TIME="5 minutes"
