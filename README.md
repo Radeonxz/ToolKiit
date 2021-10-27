@@ -1,6 +1,18 @@
-# ToolKiit
+# ToolKiits
 
 Miscellaneous useful tools
+
+## AdminDash
+
+React dashboard.
+
+Repo: [link](https://github.com/Radeonxz/ToolKiits/tree/master/adminDash)
+
+## Express Proxy
+
+Node express proxy app with caching and request limits.
+
+Repo: [link](https://github.com/Radeonxz/ToolKiits/tree/master/expressProxy)
 
 ## ExpTracker
 
@@ -47,6 +59,12 @@ Repo: [link](https://github.com/Radeonxz/ToolKiits/tree/master/quizzz)
 Electron screen recorder application.
 
 Repo: [link](https://github.com/Radeonxz/ToolKiits/tree/master/screenRecorder)
+
+## Task Tracker
+
+React task tracking app.
+
+Repo: [link](https://github.com/Radeonxz/ToolKiits/tree/master/taskTracker)
 
 ## TipTax Calculator
 
