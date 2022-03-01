@@ -1,0 +1,22 @@
+import { Task } from './Task';
+
+export const Tasks: Task[] = [
+  {
+    id: 1,
+    text: 'foo',
+    day: 'Feb 22nd at 8:00pm',
+    reminder: true,
+  },
+  {
+    id: 2,
+    text: 'bar',
+    day: 'Feb 22nd at 1:00pm',
+    reminder: false,
+  },
+  {
+    id: 3,
+    text: 'baz',
+    day: 'Feb 22nd at 5:00pm',
+    reminder: true,
+  },
+];
