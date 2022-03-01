@@ -77,3 +77,9 @@ Repo: [link](https://github.com/Radeonxz/ToolKiits/tree/master/tipTax)
 Local Express tool to take screen shot of given url.
 
 Repo: [link](https://github.com/Radeonxz/ToolKiits/tree/master/webSnap)
+
+## Pokedex
+
+State manager app with Rxjs
+
+Repo: [link](https://github.com/Radeonxz/ToolKiits/tree/master/pokedex)
