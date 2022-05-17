@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package entityPackage;
+
+service Entity {
+    rpc createEntity(EntityItem) returns (EntityItem);
+    rpc readEntity(void) returns (EntityItems);
+}
+
+message void {}
+
+message EntityItem {
+    int32 id = 1;
+    string text = 2;
+}
+
+message EntityItems {
+    repeated EntityItem items = 1;
+}
