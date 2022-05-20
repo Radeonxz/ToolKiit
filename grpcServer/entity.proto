@@ -4,10 +4,11 @@ package entityPackage;
 
 service Entity {
     rpc createEntity(EntityItem) returns (EntityItem);
-    rpc readEntity(void) returns (EntityItems);
+    rpc readEntities(voidNoParam) returns (EntityItems);
+    rpc readEntitiesStream(voidNoParam) returns (stream EntityItem);
 }
 
-message void {}
+message voidNoParam {}
 
 message EntityItem {
     int32 id = 1;
